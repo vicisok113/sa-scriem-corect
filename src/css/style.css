@@ -230,3 +230,49 @@ body.acasa .harta .checkpoint1:hover + .pers1 {
 .fix {
     overflow: hidden;
 }
+
+body.lectie {
+    background: #000;
+    color: #fff;
+}
+
+body.lectie .container{
+    width: 95%;
+    min-width: 700px;
+    max-width: 1200px;
+}
+
+body.lectie .part {
+    float: left;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+body.lectie .part1 {
+    width: 30%;
+}
+
+body.lectie .part1 img{
+    width: 100%;
+    max-width: 350px;
+    height: auto;
+}
+
+body.lectie .part2 {
+    width: 45%;
+}
+
+body.lectie .part3 {
+    width: 25%;
+}
+
+body.lectie .part3 img{
+    background: white;
+    width: 98%;
+    max-width: 170px;
+    height: auto;
+    border: 10px solid white;
+    border-radius: 20px 20px 0 0;
+}

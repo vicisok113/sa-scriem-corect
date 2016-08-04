@@ -43,8 +43,10 @@ class controller{
             $this->fisier_tpl('index', $data);
         } elseif($pag == 'lectie'){
             //Pagina unei lecții
-            $lectie = $this->ruta(2);
-
+            $lectie = intval($this->ruta(2));
+            if($lectie >= 1 && $lectie <= 4){
+                $this->fisier_tpl("lectia".$lectie);
+            }
         } elseif($pag == 'acasa'){
             //Pagina hartii
             $this->fisier_tpl('acasa');
