@@ -50,6 +50,7 @@ class model{
             unset($_SESSION['id']);
             $_SESSION['prof_id'] = $profid;
             $_SESSION['elev_id'] = $chk['elev_id'];
+            $_SESSION['nivel'] = $chk['nivel'];
             $_SESSION['email'] = $chk['email'];
             $_SESSION['nume'] = $chk['nume'];
             return 1;
