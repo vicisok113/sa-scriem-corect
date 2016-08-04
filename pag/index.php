@@ -12,12 +12,12 @@
 				<div class="card-content">
 					<?php if(!$data['logat']): ?>
 						<span class="card-title">Conectare</span>
-						<a href="acasa" class="btn green waves-light">Conectare ca vizitator</a>
+						<a href="acasa" class="btn green waves-effect waves-light">Conectare ca vizitator</a>
 						<div class="hr"></div>
 
 						<form action="" method="POST" class="form2">
 							<div class="input-field col l8 offset-l2">
-					          <input id="email" name="email" type="text" required autocomplete="off">
+					          <input id="email" name="email" type="email" required autocomplete="off">
 					          <label for="email">Adresă email</label>
 					        </div>
 							<div class="clearfix"></div>
@@ -28,24 +28,31 @@
 							<div class="clearfix"></div>
 							<?php if($data['eroare_conectare']) echo '<div class="alert red">Adresa de email sau parola introdusă este incorectă.</div>'; ?>
 							<div class="butoncard">
-								<button type="submit" class="btn blue waves-light">Conectare ca învățător</button>
+								<button type="submit" class="btn blue waves-effect waves-light">Conectare ca învățător</button>
 							</div>
 						</form>
+						<div class="hr"></div>
+						<a href="inregistrare" class="btn waves-effect waves-light">Înregistrare</a>
 					<?php else: ?>
+						<?php if(!!sizeof($data['elevi'])): ?>
 						<span class="card-title">Alegeți elevul</span>
 						<form action="" method="POST">
 							<div class="input-field">
-							<select name="selectare_elev" required>
-								<option value="" disabled selected>Alegeți un elev</option>
-								<?php foreach($data['elevi'] as $el): ?>
-									<option value="<?=$el['id']?>"><?=$el['nume']?></option>
-								<?php endforeach; ?>
-						  	</select><br>
+								<select name="selectare_elev" required>
+									<option value="" disabled selected>Alegeți un elev</option>
+									<?php foreach($data['elevi'] as $el): ?>
+										<option value="<?=$el['id']?>"><?=$el['nume']?></option>
+									<?php endforeach; ?>
+							  	</select>
+								<br>
 							</div>
-							<button type="submit" class="btn blue waves-light">Accesare</button>
-							<div class="hr"></div><br>
-							<a href="profesor" class="btn green waves-light">Administrare elevi</a>
+							<button type="submit" class="btn blue waves-effect waves-light">Accesare</button>
+							<?php else: ?>
+								<p><em>Nu ați adăugat niciun elev pe contul dvs.<br>Puteți <a href="acasa">continua ca un vizitator</a> sau puteți acceasa panoul de administrare.</em></p>
+							<?php endif; ?>
 						</form>
+						<div class="hr"></div><br>
+						<a href="profesor" class="btn green waves-effect waves-light">Administrare elevi</a>
 
 
 					<?php endif; ?>
