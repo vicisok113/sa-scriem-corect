@@ -5,7 +5,7 @@
 	<?php include 'head.php'; ?>
 </head>
 <body>
-	
+	<div class="overlay"></div>
 	<?php include 'footer.php'; ?>
 </body>
 </html>
