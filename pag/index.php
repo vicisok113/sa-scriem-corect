@@ -2,10 +2,10 @@
 <html>
 <head>
 	<title></title>
-	<?php include 'head.php'; ?>
+	<?php include 'sub/head.php'; ?>
 </head>
 <body>
 	<div class="overlay"></div>
-	<?php include 'footer.php'; ?>
+	<?php include 'sub/footer.php'; ?>
 </body>
 </html>
