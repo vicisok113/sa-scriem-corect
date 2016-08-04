@@ -14,7 +14,9 @@
 		<div class="part part2">
 			<div>
 			<h2>Regele Majusculă</h2>
-				aasdasd
+			<div id="play" class="play_btn">
+				<i class="material-icons">&#xE037;</i>
+			</div>
 			</div>
 		</div>
 		<div class="part part3">

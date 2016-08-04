@@ -240,8 +240,11 @@ body.acasa .harta .checkpoint1:hover + .pers1 {
 
 body.lectie {
     background: #FCFCFC;
-
     color: #fff;
+    background-image: url(../img/bk2.png);
+    background-size: 300px;
+    background-position: bottom;
+    background-position-x: 20px;
 }
 
 body.lectie .container{
@@ -275,10 +278,12 @@ body.lectie .part2 {
     font-size: 30px;
     font-family: cursive, sans-serif;
     padding-bottom: 30vh;
+    background-color: #fcfcfc;
     background-image: url(../img/bk.png);
     background-size: 300px;
     background-position: bottom;
-        background-position-x: -5px;
+    box-shadow: 0 0 13px 1px black;
+    background-position-x: -5px;
     background-repeat-y: repeat;
     color: #000;
     font-weight: bold;
@@ -294,6 +299,26 @@ body.lectie .part2 h2 {
 
 body.lectie .part3 {
     width: 20%;
+}
+
+body.lectie .play_btn  {
+    background-color: cornflowerblue;
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    margin: auto;
+    text-align: center;
+    cursor: pointer;
+    color: #fff;
+}
+
+body.lectie .play_btn i {
+    font-size: 150px;
+    line-height: 200px;
+}
+
+body.lectie .play_btn:hover {
+    color: #fcfcfc !important;
 }
 
 body.lectie .part3 img{
