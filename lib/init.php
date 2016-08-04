@@ -5,6 +5,8 @@ include "db.php";
 include "controller.php";
 include "model.php";
 
+session_start();
+
 //inițializare bază de date
 
 $db = new bazadedate($config);
