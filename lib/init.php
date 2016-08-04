@@ -5,7 +5,7 @@ include "db.php";
 
 //initializare baza de date
 
-db_init();
+$db = new bazadedate($config);
 
 //preluare rută
 
