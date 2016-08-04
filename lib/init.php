@@ -3,7 +3,7 @@
 include "config.php";
 include "db.php";
 
-//initializare baza de date
+//inițializare bază de date
 
 db_init();
 
