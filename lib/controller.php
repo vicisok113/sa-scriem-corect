@@ -33,7 +33,7 @@ class controller{
             $data['selectare_elev'] = $this->model->verif_selectelev();
             if($data['selectare_elev']){
                 //A fost ales un elev, redirecționăm spre hartă
-                header("Location: ".$conf['url']."harta");
+                header("Location: ".$conf['url']."acasa");
                 return;
             }
             $data['logat'] = $this->model->conectat();
