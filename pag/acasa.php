@@ -3,7 +3,6 @@
 <head>
 	<title></title>
 	<?php include 'sub/head.php'; ?>
-	<?php var_dump($_SESSION);?>
 </head>
 <body class="acasa">
 	<div class="fix">
