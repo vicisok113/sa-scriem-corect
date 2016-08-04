@@ -5,9 +5,10 @@ class controller{
     protected $ruta;
     protected $ruta_p;
 
-    function __construct($ruta){
+    function __construct($ruta, $dbcon){
         $this->ruta = $ruta;
         $this->ruta_p = explode('/', $ruta);
+        $this->model = new model($dbcon);
     }
 
     private function ruta($id){
@@ -15,17 +16,31 @@ class controller{
         return isset($this->ruta_p[$id-1]) ? $this->ruta_p[$id-1] : '';
     }
 
-    private function fisier_tpl($nume){
+    private function fisier_tpl($nume, $data = []){
+        global $config;
+        $baza_url = $config['url'];
         include 'pag/'.$nume.'.php';
     }
 
     public function pagina(){
+        global $conf;
         //Preluăm prima parte din link
         $pag = $this->ruta(1);
 
         if($pag == ''){
             //Prima pagină
-            $this->fisier_tpl('index');
+            $data['eroare_conectare'] = $this->model->verif_login();
+            $data['selectare_elev'] = $this->model->verif_selectelev();
+            if($data['selectare_elev']){
+                //A fost ales un elev, redirecționăm spre hartă
+                header("Location: ".$conf['url']."harta");
+                return;
+            }
+            $data['logat'] = $this->model->conectat();
+            if($data['logat']){
+                $data['elevi'] = $this->model->lista_elevi();
+            }
+            $this->fisier_tpl('index', $data);
         } elseif($pag == 'lectie'){
             //Pagina unei lecții
             $lectie = $this->ruta(2);

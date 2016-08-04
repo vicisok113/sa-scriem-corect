@@ -62,9 +62,14 @@ class bazadedate{
 
     public function query($query){
         $res = $this->db->query($query);
-        
+
         $this->verif_eroare();
         return $res;
+    }
+
+    public function elev($id_elev){
+        $date = $this->db->query("SELECT id, nume FROM elevi WHERE id = '$id_elev' LIMIT 1");
+        return $date->fetch_array();
     }
 
 }

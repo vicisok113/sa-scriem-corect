@@ -2,11 +2,57 @@ html, body{
     width: 100%;
     height: 100%;
 }
+
 body.index{
     background-color: #222;
     background-image: url('../img/carte.png');
     background-size: contain;
     background-position: center center;
+}
+
+.hr{
+    width: 95%;
+    height: 1.5px;
+    background: rgba(0, 0, 0, 0.3);
+    margin-top: 30px;
+    margin-bottom: 10px;
+    clear: both;
+}
+
+.alert{
+    padding: 7px 15px;
+    color: white;
+    border-radius: 10px;
+    margin: 10px 6px;
+}
+
+body.index .logare{
+    margin-top: 10vh;
+}
+
+body.index .card-content{
+    width: 100%;
+    text-align: center;
+}
+
+body.index .card-title{
+    display: block;
+    margin-bottom: 20px;
+}
+
+body.index .card-content .form2{
+    text-align: left;
+    overflow: hidden;
+}
+
+body.index .input-field input{
+    margin-bottom: 5px;
+}
+
+body.index .butoncard{
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 body.index .overlay{
