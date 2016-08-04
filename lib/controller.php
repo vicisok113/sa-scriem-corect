@@ -22,7 +22,7 @@ class controller{
         if($pag == ''){
             //Prima pagină
 
-        }elseif($pag == 'lectie'){
+        } elseif($pag == 'lectie'){
             //Pagina unei lecții
             $lectie = $this->ruta(2);
             
