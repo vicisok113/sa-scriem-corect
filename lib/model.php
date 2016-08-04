@@ -33,7 +33,7 @@ class model{
     public function lista_elevi(){
         if(!isset($_SESSION['id']) || !$_SESSION['id']) return [];
         $id = intval($_SESSION['id']);
-        $elevi = $this->db->query("SELECT id, nume FROM elevi WHERE prof_id = $id");
+        $elevi = $this->db->query("SELECT id, nume, nivel FROM elevi WHERE prof_id = $id");
         return $elevi->fetch_all(MYSQLI_ASSOC);
     }
 
@@ -49,9 +49,8 @@ class model{
             $profid = $_SESSION['id'];
             unset($_SESSION['id']);
             $_SESSION['prof_id'] = $profid;
-            $_SESSION['elev_id'] = $chk['elev_id'];
+            $_SESSION['elev_id'] = $chk['id'];
             $_SESSION['nivel'] = $chk['nivel'];
-            $_SESSION['email'] = $chk['email'];
             $_SESSION['nume'] = $chk['nume'];
             return 1;
         }

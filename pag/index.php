@@ -12,7 +12,7 @@
 				<div class="card-content">
 					<?php if(!$data['logat']): ?>
 						<span class="card-title">Conectare</span>
-						<a href="harta" class="btn green waves-light">Conectare ca vizitator</a>
+						<a href="acasa" class="btn green waves-light">Conectare ca vizitator</a>
 						<div class="hr"></div>
 
 						<form action="" method="POST" class="form2">
