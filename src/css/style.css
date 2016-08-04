@@ -239,7 +239,11 @@ body.acasa .harta .checkpoint1:hover + .pers1 {
 }
 
 body.lectie {
-    background: #000;
+    background: #222;
+    background-image: url(../img/slbottom.png);
+    background-size: 300px;
+    background-position: bottom;
+    background-repeat-y: no-repeat;
     color: #fff;
 }
 
