@@ -23,12 +23,16 @@
 //hainele cele noi ale împăratului (greșit – răspunsul corect era cealaltă variantă)    Hainele cele noi ale împăratului ( corect)
 //Am mers la mare. (Corect)      am mers la mare. (greșit – răspunsul corect era cealaltă variantă)
 //Astăzi am învățat Ceva Nou. (greșit – răspunsul corect era cealaltă variantă)    Astăzi am învățat ceva nou.(corect)
-
+var stagiu = 0;
 $(document).ready(function(){
     $(".part2 h2").css('margin-top', '0vh');
 }).on('click', '#play', function(e){
-        e.preventDefault();
+    e.preventDefault();
+    if(stagiu == 0){
         start();
+        stagiu++;
+        $("#play").fadeOut(2000);
+    }
 });
 
 function start(){
