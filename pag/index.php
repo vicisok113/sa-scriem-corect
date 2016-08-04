@@ -4,7 +4,7 @@
 	<title></title>
 	<?php include 'sub/head.php'; ?>
 </head>
-<body>
+<body class="index">
 	<div class="overlay"></div>
 	<?php include 'sub/footer.php'; ?>
 </body>
