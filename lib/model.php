@@ -46,7 +46,9 @@ class model{
             //Dacă nu, se iese din funcție
             //Dacă sunt corecte se inițializează sesiunea
             //Și este delogat profesorul pentru securitate
+            $profid = $_SESSION['id'];
             unset($_SESSION['id']);
+            $_SESSION['prof_id'] = $profid;
             $_SESSION['elev_id'] = $chk['elev_id'];
             $_SESSION['email'] = $chk['email'];
             $_SESSION['nume'] = $chk['nume'];
