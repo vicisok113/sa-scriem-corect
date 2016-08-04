@@ -239,11 +239,8 @@ body.acasa .harta .checkpoint1:hover + .pers1 {
 }
 
 body.lectie {
-    background: #222;
-    background-image: url(../img/slbottom.png);
-    background-size: 300px;
-    background-position: bottom;
-    background-repeat-y: no-repeat;
+    background: #fff;
+
     color: #fff;
 }
 
@@ -263,37 +260,47 @@ body.lectie .part {
 }
 
 body.lectie .part1 {
-    width: 30%;
+    width: 20%;
 }
 
 body.lectie .part1 img{
     width: 100%;
     max-width: 350px;
     height: auto;
+    margin-left: -50px;
 }
 
 body.lectie .part2 {
-    width: 45%;
+    width: 60%;
     font-size: 30px;
     font-family: cursive, sans-serif;
     padding-bottom: 30vh;
+    background-image: url(../img/bk.png);
+    background-size: 300px;
+    background-position: bottom;
+    background-repeat-y: repeat;
+    color: #000;
+    font-weight: bold;
 }
 
 body.lectie .part2 h2 {
     font-size: 50px;
     font-family: cursive, sans-serif;
-    margin-top: -15vh;
+    margin-top: 0vh;
+    transition: .3s all;
+    font-weight: bold;
 }
 
 body.lectie .part3 {
-    width: 25%;
+    width: 20%;
 }
 
 body.lectie .part3 img{
     background: white;
-    width: 98%;
-    max-width: 200px;
+    width: 130%;
+    max-width: 500px;
     height: auto;
     border: 40px solid white;
     border-radius: 20px 20px 0 0;
+    margin-left: 5px;
 }
