@@ -1,1 +1,1 @@
-# S-scriem-corect
+# Să scriem corect
