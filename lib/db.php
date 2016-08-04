@@ -11,6 +11,7 @@ class bazadedate{
     }
 
     private function verif_eroare(){
+        //Verifică dacă există vreo eroare
         if(!empty($db->error)){
             $this->eroare();
             return true;
@@ -22,12 +23,17 @@ class bazadedate{
         die("Eroare bază de date: ".$this->db->error);
     }
 
+    public function escape($str){
+        return $this->db->real_escape_string($str);
+    }
+
     public function insert($tabel, $valori){
+        //Generează și introduce în tabelul $tabel valorile din vectorul $valori
         if(!is_array($valori)) return false;
         $coloane = [];
         $date = [];
         foreach($valori as $key => &$val){
-            $val = $db->real_escape_string($val);
+            $val = $this->escape($val);
             $coloane[] = '`'.$key.'`';
             $date[] = is_numeric($val) ? $val : '"'.$val.'"';
         }
@@ -39,9 +45,24 @@ class bazadedate{
         return $res;
     }
 
+    public function verif_date($email, $parola){
+        //Verifică dacă datele trimise prin parametri sunt corecte
+        $email = $this->escape($email);
+        $parola = $this->escape($parola);
+
+        $date = $this->db->query("SELECT id, email, parola FROM profesori WHERE email = '$email' LIMIT 1");
+        $date = $date->fetch_array();
+
+        if($date == false || sizeof($date) == 0 || !password_verify($parola, $date['parola'])){
+            return false;
+        }
+        return $date;
+
+    }
+
     public function query($query){
         $res = $this->db->query($query);
-
+        
         $this->verif_eroare();
         return $res;
     }
