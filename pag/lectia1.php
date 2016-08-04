@@ -13,6 +13,7 @@
 		</div>
 		<div class="part part2">
 			<div>
+			<h2>Regele Majusculă</h2>
 				aasdasd
 			</div>
 		</div>

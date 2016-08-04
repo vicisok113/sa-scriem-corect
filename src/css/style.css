@@ -153,7 +153,7 @@ body.acasa .harta .clasa1 {
     top: 330px;
     left: 100px;
     position: absolute;
-    font-family: cursive, "Sans Serif";
+    font-family: cursive, sans-serif;
     font-size: 20px;
     color: #000;
 }
@@ -162,7 +162,7 @@ body.acasa .harta .clasa2 {
     top: 200px;
     left: 290px;
     position: absolute;
-    font-family: cursive, "Sans Serif";
+    font-family: cursive, sans-serif;
     font-size: 20px;
     color: #000;
 }
@@ -171,7 +171,7 @@ body.acasa .harta .clasa3 {
     top: 250px;
     left: 530px;
     position: absolute;
-    font-family: cursive, "Sans Serif";
+    font-family: cursive, sans-serif;
     font-size: 20px;
     color: #000;
 }
@@ -180,7 +180,7 @@ body.acasa .harta .clasa4 {
     top: 100px;
     left: 700px;
     position: absolute;
-    font-family: cursive, "Sans Serif";
+    font-family: cursive, sans-serif;
     font-size: 20px;
     color: #000;
 }
@@ -240,6 +240,7 @@ body.lectie .container{
     width: 95%;
     min-width: 700px;
     max-width: 1200px;
+    height: 100%;
 }
 
 body.lectie .part {
@@ -262,6 +263,15 @@ body.lectie .part1 img{
 
 body.lectie .part2 {
     width: 45%;
+    font-size: 30px;
+    font-family: cursive, sans-serif;
+    padding-bottom: 30vh;
+}
+
+body.lectie .part2 h2 {
+    font-size: 50px;
+    font-family: cursive, sans-serif;
+    margin-top: -15vh;
 }
 
 body.lectie .part3 {
@@ -271,8 +281,8 @@ body.lectie .part3 {
 body.lectie .part3 img{
     background: white;
     width: 98%;
-    max-width: 170px;
+    max-width: 200px;
     height: auto;
-    border: 10px solid white;
+    border: 40px solid white;
     border-radius: 20px 20px 0 0;
 }
