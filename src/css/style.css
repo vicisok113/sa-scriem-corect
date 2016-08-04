@@ -12,7 +12,7 @@ body.index{
 
 .hr{
     width: 95%;
-    height: 1.5px;
+    height: 1px;
     background: rgba(0, 0, 0, 0.3);
     margin-top: 30px;
     margin-bottom: 10px;
@@ -43,6 +43,13 @@ body.index .card-title{
 body.index .card-content .form2{
     text-align: left;
     overflow: hidden;
+    margin-bottom: -30px;
+}
+
+body.index .card-content .form3{
+    text-align: left;
+    overflow: hidden;
+    margin-top: -20px;
 }
 
 body.index .input-field input{

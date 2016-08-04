@@ -51,6 +51,7 @@ class bazadedate{
         $parola = $this->escape($parola);
 
         $date = $this->db->query("SELECT id, email, parola FROM profesori WHERE email = '$email' LIMIT 1");
+        if(!$date) return false;
         $date = $date->fetch_array();
 
         if($date == false || sizeof($date) == 0 || !password_verify($parola, $date['parola'])){
@@ -70,6 +71,15 @@ class bazadedate{
     public function elev($id_elev){
         $date = $this->db->query("SELECT id, nume FROM elevi WHERE id = '$id_elev' LIMIT 1");
         return $date->fetch_array();
+    }
+
+    public function email_exista($email){
+        $email = $this->escape($email);
+        $date = $this->db->query("SELECT id FROM profesori WHERE email = '$email' LIMIT 1");
+        if(!$date) return 0;
+        $date = $date->fetch_array();
+        if(sizeof($date)) return 1;
+        return 0;
     }
 
 }

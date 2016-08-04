@@ -57,4 +57,18 @@ class model{
 
     }
 
+    public function verif_inreg(){
+        //Verifică dacă au fost trimise date pentru înregistrare
+        if(isset($_POST['email'], $_POST['parola'])){
+            if(filter_var($_POST['email'], FILTER_VALIDATE_EMAIL) === false) return 1;
+            if(strlen($_POST['parola']) < 6) return 2;
+            if($this->db->email_exista($_POST['email'])) return 3;
+            $data['email'] = $_POST['email'];
+            $data['parola'] = password_hash($_POST['parola'], PASSWORD_DEFAULT);
+            $this->db->insert('profesori', $data);
+            return 4;
+        }
+        return 0;
+    }
+
 }

@@ -49,6 +49,12 @@ class controller{
             //Pagina hartii
             $this->fisier_tpl('acasa');
 
+        } elseif($pag == 'inregistrare'){
+            //Pagina inregistrare invatator
+            $verif = $this->model->verif_inreg();
+            $data['eroare_inreg'] = $verif==1 || $verif==2 || $verif==3 ? $verif : 0;
+            $data['succes_inreg'] = $verif==4 ? 1 : 0;
+            $this->fisier_tpl('inregistrare', $data);
         }
     }
 }
