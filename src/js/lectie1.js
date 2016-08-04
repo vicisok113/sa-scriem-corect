@@ -22,4 +22,18 @@
 //Croitorașul cel viteaz 	(Corect)   croitorașul cel viteaz (greșit – răspunsul corect era cealaltă variantă)
 //hainele cele noi ale împăratului (greșit – răspunsul corect era cealaltă variantă)    Hainele cele noi ale împăratului ( corect)
 //Am mers la mare. (Corect)      am mers la mare. (greșit – răspunsul corect era cealaltă variantă)
-//Astăzi am învățat Ceva Nou. (greșit – răspunsul corect era cealaltă variantă)    Astăzi am învățat ceva nou.(corect) 
+//Astăzi am învățat Ceva Nou. (greșit – răspunsul corect era cealaltă variantă)    Astăzi am învățat ceva nou.(corect)
+
+$(document).ready(function(){
+    $(".part2 h2").css('margin-top', '0vh');
+}).on('click', '#play', function(e){
+        e.preventDefault();
+        start();
+});
+
+function start(){
+    player.pregateste('bine_ai_venit.mp4');
+    player.play(function(){
+        $(".part2 h2").css('margin-top', '-20vh');
+    });
+}
