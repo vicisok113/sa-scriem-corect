@@ -239,9 +239,12 @@ body.acasa .harta .checkpoint1:hover + .pers1 {
 }
 
 body.lectie {
-    background: #fff;
-
+    background: #FCFCFC;
     color: #fff;
+    background-image: url(../img/bk2.png);
+    background-size: 300px;
+    background-position: bottom;
+    background-position-x: 20px;
 }
 
 body.lectie .container{
@@ -265,7 +268,7 @@ body.lectie .part1 {
 
 body.lectie .part1 img{
     width: 100%;
-    max-width: 350px;
+    max-width: 450px;
     height: auto;
     margin-left: -50px;
 }
@@ -275,9 +278,12 @@ body.lectie .part2 {
     font-size: 30px;
     font-family: cursive, sans-serif;
     padding-bottom: 30vh;
+    background-color: #fcfcfc;
     background-image: url(../img/bk.png);
     background-size: 300px;
     background-position: bottom;
+    box-shadow: 0 0 13px 1px black;
+    background-position-x: -5px;
     background-repeat-y: repeat;
     color: #000;
     font-weight: bold;
@@ -295,12 +301,30 @@ body.lectie .part3 {
     width: 20%;
 }
 
+body.lectie .play_btn  {
+    background-color: cornflowerblue;
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    margin: auto;
+    text-align: center;
+    cursor: pointer;
+    color: #fff;
+}
+
+body.lectie .play_btn i {
+    font-size: 150px;
+    line-height: 200px;
+}
+
+body.lectie .play_btn:hover {
+    color: #fcfcfc !important;
+}
+
 body.lectie .part3 img{
-    background: white;
     width: 130%;
-    max-width: 500px;
+    max-width: 250px;
     height: auto;
-    border: 40px solid white;
     border-radius: 20px 20px 0 0;
-    margin-left: 5px;
+    margin-left: 25px;
 }
