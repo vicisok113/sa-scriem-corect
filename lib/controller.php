@@ -30,6 +30,10 @@ class controller{
             //Pagina unei lecții
             $lectie = $this->ruta(2);
 
+        } elseif($pag == 'acasa'){
+            //Pagina hartii
+            $this->fisier_tpl('acasa');
+
         }
     }
 }
