@@ -162,8 +162,8 @@ function step5(){
 function step6(repetnr){
     stagiu = 6;
 
-    player.pregateste('acum_e_momentul.mp4');
-    player.play(function(){
+    // player.pregateste('acum_e_momentul.mp4');
+    // player.play(function(){
         //apare aplicatie
 
     if(typeof repetnr == 'undefined') repetnr = 5;
