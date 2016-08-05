@@ -273,7 +273,7 @@ body.lectie .part {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100%;
+    min-height: 100%;
 }
 
 body.lectie .part1 {
@@ -303,6 +303,7 @@ body.lectie .part2 {
     font-weight: bold;
     display: block;
     text-align: center;
+    overflow: hidden;
 }
 
 body.lectie .part2 h2 {
