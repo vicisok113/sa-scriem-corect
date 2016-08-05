@@ -5,6 +5,17 @@
 	<?php include 'sub/head.php'; ?>
 </head>
 <body class="lectie">
+	<a href="#modalobj" class="waves-effect waves-light objbtn modal-trigger">Obiective</a>
+	<div id="modalobj" class="modal">
+		<div class="modal-content">
+			<h4>Obiectivele lecției</h4>
+			<p>- scrierea corectă a cuvintelor care conţin consoana m înainte de b şi p;</p>
+			<p>- corectarea unor cuvinte prin compararea cu un model.</p>
+		</div>
+		<div class="modal-footer">
+			<a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Închide</a>
+		</div>
+	</div>
 	<div class="container">
 		<div class="part part1">
 			<div>

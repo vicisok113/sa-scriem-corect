@@ -5,6 +5,18 @@
 	<?php include 'sub/head.php'; ?>
 </head>
 <body class="lectie">
+	<a href="#modalobj" class="waves-effect waves-light objbtn modal-trigger">Obiective</a>
+	<div id="modalobj" class="modal">
+		<div class="modal-content">
+			<h4>Obiectivele lecției</h4>
+			<p>- scrierea unor cuvinte / propoziții cu majusculă;</p>
+			<p>- scrierea cu majusculă a substantivelor proprii;</p>
+			<p>- învățarea, recunoașterea și utilizarea majusculelor și minusculelor.</p>
+		</div>
+		<div class="modal-footer">
+			<a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Închide</a>
+		</div>
+	</div>
 	<div class="container">
 		<div class="part part1">
 			<div>

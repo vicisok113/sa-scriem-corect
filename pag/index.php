@@ -52,7 +52,7 @@
 							<?php endif; ?>
 						</form>
 						<div class="hr"></div><br>
-						<a href="profesor" class="btn green waves-effect waves-light">Administrare elevi</a>
+						<a href="invatator" class="btn green waves-effect waves-light">Administrare elevi</a>
 
 
 					<?php endif; ?>
