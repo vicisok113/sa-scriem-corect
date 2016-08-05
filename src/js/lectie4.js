@@ -93,8 +93,9 @@ finaliz = function(){
     var diffs = compare(text_corect, text_introdus);
     scor = (100-diffs)/10;
     if(scor<0) scor=0;
+    player.stop();
     $(".text-inner").fadeOut(function(){
-        $("#text").html('<div class="text-inner innerp">'+text+'<br><br>Scor: '+scor+'</div>');
+        $("#text").html('<div class="text-inner innerp">Textul tău:<br>'+text+'<br><br>Scor: '+scor+'</div>');
         $("#text").fadeIn();
         $(".text-inner").fadeIn();
         $.post('ajax/set_scor', {scor: scor, runda: 4});

@@ -160,11 +160,7 @@ function step5(){
 }
 
 function step6(repetnr){
-    stagiu = 6;
-
-    // player.pregateste('acum_e_momentul.mp4');
-    // player.play(function(){
-        //apare aplicatie
+    stagiu = 6; 
 
     if(typeof repetnr == 'undefined') repetnr = 5;
     if(repetnr == 0) return step7();
