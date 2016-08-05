@@ -424,11 +424,6 @@ function step12(){
     };
 }
 
-function calcscor(){
-    var tot = scorc + scorg;
-    var rap = (scorc / tot)*10;
-    return Math.round(rap*100)/100;
-}
 
 function step13(){
     $("#text").fadeOut(function(){
@@ -436,5 +431,8 @@ function step13(){
         $("#text").fadeIn();
         $(".text-ob").fadeIn();
         $.post('ajax/set_scor', {scor: calcscor(), runda: 2});
+        setTimeout(function(){
+            window.location.href = 'acasa';
+        }, 5000);
     });
 }

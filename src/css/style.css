@@ -397,6 +397,10 @@ body.lectie .text-inner.innerp2 #resp{
     font-size: 28px;
     color: white;
 }
+body.lectie .text-inner.innerp2.innp3 #resp{
+    color: #333;
+    margin-bottom: 30px;
+}
 body.lectie .text-inner.innerp2 #resp.error{
     color: #f44336;
 }
