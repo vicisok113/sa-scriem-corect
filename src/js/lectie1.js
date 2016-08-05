@@ -116,6 +116,7 @@ function step4(){
                        player.play(function(){
                            $("#text").append('<div class="text-inner">Să nu uităm că orice propoziție începe cu literă mare.</div>');
                            $(".text-inner").fadeIn(200);
+                           $($(".text-inner")[0]).slideUp();
                            player.pregateste('orice_prop.mp4');
                            player.play(function(){
                                $("#text").append('<div class="text-ob">A fost odată ca niciodată un rege fericit.<br>Acesta trăia pe tărâmul cuvintelor. </div>');
