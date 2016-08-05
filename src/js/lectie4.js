@@ -100,7 +100,7 @@ finaliz = function(){
         $.post('ajax/set_scor', {scor: scor, runda: 4});
             setTimeout(function(){
                 window.location.href = 'acasa';
-            }, 6000);
+            }, 20000);
     })
 
 };

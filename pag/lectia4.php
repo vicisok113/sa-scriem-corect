@@ -9,8 +9,8 @@
 	<div id="modalobj" class="modal">
 		<div class="modal-content">
 			<h4>Obiectivele lecției</h4>
-			<p>- scrierea corectă a cuvintelor care conţin consoana m înainte de b şi p;</p>
-			<p>- corectarea unor cuvinte prin compararea cu un model.</p>
+			<p>- să recunoască substantivele articulate;</p>
+			<p>	-să treacă la plural anumite substantive articulate;</p>
 		</div>
 		<div class="modal-footer">
 			<a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Închide</a>
