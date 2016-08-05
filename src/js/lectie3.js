@@ -50,15 +50,17 @@ function step3(){
 
 function step4(){
     stagiu = 4;
-    $("#text").html('<div class="text-inner"></div>');
     $("#text").fadeIn(0);
     $(".text-inner").fadeIn(200);
     setTimeout(function(){
-        $("#text").append('<div class="text-ob"></div>');
+        $("#text").append('<div class="text-ob">Ai parcurs cu success această lecție. Vei fi redirecționat spre hartă.</div>');
         $(".text-ob").fadeIn(200);
         setTimeout(function(){
-            step5();
-        }, 8000);
+            $.post('ajax/set_scor', {scor: 10, runda: 3});
+            setTimeout(function(){
+                window.location.href = 'acasa';
+            }, 6000);
+        }, 6000);
     }, 1000);
 }
 
