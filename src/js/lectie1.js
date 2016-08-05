@@ -158,7 +158,7 @@ function step5(){
 
 function step6(){
     stagiu = 6;
-    player.pregateste('acum_este_momentul.mp4');
+    player.pregateste('acum_e_momentul.mp4');
     player.play(function(){
         //apare aplicatie
     });
