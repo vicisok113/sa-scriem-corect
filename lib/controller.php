@@ -63,7 +63,13 @@ class controller{
             if($ajx == 'set_scor' && $this->model->conectat_elev() && isset($_POST['scor'], $_POST['runda'])){
                 $this->model->set_scor($_POST['runda'], $_POST['scor']);
             }
-
+        } elseif($pag == 'invatator'){
+            $data['logat'] = $this->model->conectat();
+            if($data['logat']){
+                $data['elevi'] = $this->model->lista_elevi();
+                $verif = $this->model->verif_elev();
+            }
+            $this->fisier_tpl('invatator', $data);
         }
     }
 }
