@@ -349,3 +349,15 @@ body.lectie .text-inner{
     margin: auto;
     margin-bottom: 10px;
 }
+
+body.lectie .text-ob{
+    background: rgba(255, 255, 255, 0.8);
+    padding: 5px 30px;
+    border-radius: 10px;
+    text-align: center;
+    display: none;
+    max-width: 95%;
+    width: 800px;
+    margin: auto;
+    margin-bottom: 10px;
+}
