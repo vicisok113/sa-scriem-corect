@@ -272,6 +272,7 @@ body.lectie .part1 {
 
 body.lectie .part1 img{
     width: 100%;
+    min-width: 310px;
     max-width: 450px;
     height: auto;
     margin-left: -50px;
