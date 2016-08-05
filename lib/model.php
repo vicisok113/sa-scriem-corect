@@ -71,6 +71,18 @@ class model{
         return 0;
     }
 
+    public function verif_elev(){
+        //Verifică dacă au fost trimise date pentru înregistrare
+        if(isset($_POST['nume'])){
+            $data['nume'] = $_POST['nume'];
+            $data['prof_id'] = (int)$this->conectat();
+            $data['nivel'] = $data['scor1'] = $data['scor2'] = $data['scor3'] = $data['scor4'] = 0;
+            $this->db->insert('elevi', $data);
+            return 1;
+        }
+        return 0;
+    }
+
     public function set_scor($runda, $scor){
         $scor = $this->db->escape($scor);
         $runda = intval($runda);

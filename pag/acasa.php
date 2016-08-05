@@ -9,7 +9,7 @@
 		<div class="harta">
 			<a href="lectie/1">
 				<img class="path1" src="src/img/path1.png">
-				<img class="checkpoint1 galben" src="src/img/checkpoint.png">
+				<img class="checkpoint1" src="src/img/checkpoint.png">
 				<img class="pers1 pers" src="src/img/rege.png">
 				<p class="clasa1 clasa">Clasa I</p>
 			</a>
