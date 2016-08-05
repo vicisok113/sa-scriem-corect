@@ -1,6 +1,10 @@
 $(document).ready(function(){
     $('select').material_select();
     $('.modal-trigger').leanModal();
+    $('.modal-close').click(function(e){
+        e.preventDefault();
+        $(this).parent().parent().closeModal();
+    });
 })
 
 player = {
