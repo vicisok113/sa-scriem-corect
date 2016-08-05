@@ -89,9 +89,19 @@ body.acasa .harta {
     overflow: hidden;
 }
 
+body.acasa .but {
+    display: none;
+}
+
 @media (max-width: 960px) {
     body.acasa .harta {
         display: none;
+    }
+    body.acasa .but {
+        display: block;
+        margin: auto;
+        width: 80%;
+        background-color: #f44336;
     }
 }
 

@@ -16,12 +16,12 @@
 						<div class="hr"></div>
 
 						<form action="" method="POST" class="form2">
-							<div class="input-field col l8 offset-l2">
+							<div class="input-field col l8 s12 offset-l2">
 					          <input id="email" name="email" type="email" required autocomplete="off">
 					          <label for="email">Adresă email</label>
 					        </div>
 							<div class="clearfix"></div>
-							<div class="input-field col l8 offset-l2">
+							<div class="input-field col l8 s12 offset-l2">
 					          <input id="parola" name="parola" type="password" required autocomplete="off">
 					          <label for="parola">Parolă</label>
 					        </div>
