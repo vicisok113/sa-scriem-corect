@@ -403,6 +403,15 @@ body.lectie .text-inner.innerp2 #resp.error{
 body.lectie .text-inner.innerp2 #resp.success{
     color: #4caf50;
 }
+body.lectie .text-inner.innerp2 #resp.items{
+    color: #333;
+}
+body.lectie .text-inner.innerp2 #resp.items s{
+    color: #f44336;
+}
+body.lectie .text-inner.innerp2 #resp.items u{
+    color: #4caf50;
+}
 
 body.lectie .text-ob{
     background: rgba(255, 255, 255, 0.8);

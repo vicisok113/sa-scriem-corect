@@ -22,3 +22,28 @@ player = {
         this.rulare = 0;
     }
 }
+
+function compare(str1, str2){
+    var data = JsDiff.diffChars(str1, str2);
+    var diff = 0;
+    $.each(data, function(i, el){
+        if(el.added==true)diff+=el.count;
+        else if(el.removed==true)diff+=el.count;
+    });
+    return diff;
+}
+
+function dstr(str1, str2){
+    var data = JsDiff.diffChars(str2, str1);
+    var str = '';
+    $.each(data, function(i, el){
+        if(el.added == true){
+            str+='<u>'+el.value+'</u>';
+        }else if(el.removed == true){
+            str+='<s>'+el.value+'</s>';
+        }else{
+            str+=el.value;
+        }
+    });
+    return str;
+}

@@ -50,6 +50,10 @@ function step2(){
     setTimeout(function(){
         $(".text-inner").fadeOut(function(){
             $("#text").html('<div class="text-inner innerp">Legea sună cam așa: ”Amicul nostru M va sta mereu înainte de P sau B și asta se va aplica și în cazul literelor!”. Și de atunci, această lege este mereu aplicată, M fiind înaine lui P sau B orice s-ar întâmpla.<br>Exemple: <b>imparţial, îmbătat, împroşcat, amputat, împodobit</b>.</div>');
+            setTimeout(function(){
+                $("#text").append('<div class="text-inner innerp">Acum să trecem la niște teste.</div>');
+                $(".text-inner").fadeIn();
+            }, 5000)
             $(".text-inner").fadeIn();
         })
     }, 38000);
@@ -210,5 +214,227 @@ function step6(){
 }
 
 function step7(){
-    
+    $("#text").html('<div class="text-inner innerp">Acum este momentul să verificăm dacă ești destul de curajos să mergi mai departe.</div>').fadeIn();
+    $(".text-inner").fadeIn();
+    setTimeout(function(){
+        $("#text").append('<div class="text-inner innerp">Vei primi o listă de cuvinte greșite, iar tu va trebui să scrii valoarea corectă.</div>');
+        $(".text-inner").fadeIn();
+    }, 3000);
+    setTimeout(function(){
+        $("#text").fadeOut(function(){
+            $("#text").html('');
+            step8();
+        });
+    }, 13000)
+}
+
+function chck_n_score(w1, w2){
+    var diffs = compare(w1, w2);
+    if(diffs == 0){
+        scorc+=3;
+        return 1;
+    }else{
+        scorg+=Math.round(diffs*0.6);
+        return 0;
+    }
+}
+
+function step8(){
+    stagiu = 8;
+    var word = 'egzersare';
+    var correct_word = 'exersare'
+    var diffstr = dstr(correct_word, word);
+    $("#text").html('<div class="text-inner innerp2"> <b>'+word+'</b> <div id="resp"></div> <div class="input-field col l8 offset-l2"> <input id="el1" type="text" required autocomplete="off"> <label for="el1">Scrieți varianta corectă</label> </div><a class="btn1 green">Este corect</a> <a class="btn2 red">Corectare</a> </div>').fadeIn();
+    $(".text-inner").fadeIn();
+    $("#text .btn1")[0].onclick = function(){
+        if(stagiu != 8) return;
+        if(chck_n_score(correct_word, word)){
+            player.pregateste('corect.mp4');
+            $("#resp").html('Corect!').removeClass('items').addClass('success');
+        }else{
+            player.pregateste('gresit.mp4');
+            $("#resp").html('Greșit! Corect era: '+diffstr).removeClass('success').addClass('items');
+        }
+        player.play();
+        setTimeout(950, function(){ $("#text").fadeOut(function(){ $("#text").html(''); }) }, 1000);
+        setTimeout(step9, 2000);
+    };
+    $("#text .btn2")[0].onclick = function(){
+        if(stagiu != 8) return;
+        if(chck_n_score(correct_word, $("#el1").val().toLowerCase())){
+            player.pregateste('corect.mp4');
+            $("#resp").html('Corect!').removeClass('items').addClass('success');
+        }else{
+            player.pregateste('gresit.mp4');
+            $("#resp").html('Greșit! Corect era: '+diffstr).removeClass('success').addClass('items');
+        }
+        player.play();
+        setTimeout(950, function(){ $("#text").fadeOut(function(){ $("#text").html(''); }) }, 1000);
+        setTimeout(step9, 2000);
+    };
+}
+
+function step9(){
+    stagiu = 9;
+    var word = 'fi bun';
+    var correct_word = 'fii bun'
+    var diffstr = dstr(correct_word, word);
+    $("#text").html('<div class="text-inner innerp2"> <b>'+word+'</b> <div id="resp"></div> <div class="input-field col l8 offset-l2"> <input id="el1" type="text" required autocomplete="off"> <label for="el1">Scrieți varianta corectă</label> </div><a class="btn1 green">Este corect</a> <a class="btn2 red">Corectare</a> </div>').fadeIn();
+    $(".text-inner").fadeIn();
+    $("#text .btn1")[0].onclick = function(){
+        if(stagiu != 9) return;
+        if(chck_n_score(correct_word, word)){
+            player.pregateste('corect.mp4');
+            $("#resp").html('Corect!').removeClass('items').addClass('success');
+        }else{
+            player.pregateste('gresit.mp4');
+            $("#resp").html('Greșit! Corect era: '+diffstr).removeClass('success').addClass('items');
+        }
+        player.play();
+        setTimeout(950, function(){ $("#text").fadeOut(function(){ $("#text").html(''); }) }, 1000);
+        setTimeout(step10, 2000);
+    };
+    $("#text .btn2")[0].onclick = function(){
+        if(stagiu != 9) return;
+        if(chck_n_score(correct_word, $("#el1").val().toLowerCase())){
+            player.pregateste('corect.mp4');
+            $("#resp").html('Corect!').removeClass('items').addClass('success');
+        }else{
+            player.pregateste('gresit.mp4');
+            $("#resp").html('Greșit! Corect era: '+diffstr).removeClass('success').addClass('items');
+        }
+        player.play();
+        setTimeout(950, function(){ $("#text").fadeOut(function(){ $("#text").html(''); }) }, 1000);
+        setTimeout(step10, 2000);
+    };
+}
+
+function step10(){
+    stagiu = 10;
+    var word = 'dintrun';
+    var correct_word = 'dintr-un'
+    var diffstr = dstr(correct_word, word);
+    $("#text").html('<div class="text-inner innerp2"> <b>'+word+'</b> <div id="resp"></div> <div class="input-field col l8 offset-l2"> <input id="el1" type="text" required autocomplete="off"> <label for="el1">Scrieți varianta corectă</label> </div><a class="btn1 green">Este corect</a> <a class="btn2 red">Corectare</a> </div>').fadeIn();
+    $(".text-inner").fadeIn();
+    $("#text .btn1")[0].onclick = function(){
+        if(stagiu != 10) return;
+        if(chck_n_score(correct_word, word)){
+            player.pregateste('corect.mp4');
+            $("#resp").html('Corect!').removeClass('items').addClass('success');
+        }else{
+            player.pregateste('gresit.mp4');
+            $("#resp").html('Greșit! Corect era: '+diffstr).removeClass('success').addClass('items');
+        }
+        player.play();
+        setTimeout(950, function(){ $("#text").fadeOut(function(){ $("#text").html(''); }) }, 1000);
+        setTimeout(step11, 2000);
+    };
+    $("#text .btn2")[0].onclick = function(){
+        if(stagiu != 10) return;
+        if(chck_n_score(correct_word, $("#el1").val().toLowerCase())){
+            player.pregateste('corect.mp4');
+            $("#resp").html('Corect!').removeClass('items').addClass('success');
+        }else{
+            player.pregateste('gresit.mp4');
+            $("#resp").html('Greșit! Corect era: '+diffstr).removeClass('success').addClass('items');
+        }
+        player.play();
+        setTimeout(950, function(){ $("#text").fadeOut(function(){ $("#text").html(''); }) }, 1000);
+        setTimeout(step11, 2000);
+    };
+}
+
+function step11(substep){
+    stagiu = 11;
+    if(typeof substep == 'undefined') substep=3;
+    else if(substep==0) return step12();
+    if(substep == 3){
+        var word = 'poiezie';
+        var correct_word = 'poezie';
+    }else if(substep == 2){
+        var word = 'împodobit';
+        var correct_word = 'împodobit';
+    }else if(substep == 1){
+        var word = 'înpărat';
+        var correct_word = 'împărat';
+    }
+    var diffstr = dstr(correct_word, word);
+    $("#text").html('<div class="text-inner innerp2"> <b>'+word+'</b> <div id="resp"></div> <div class="input-field col l8 offset-l2"> <input id="el1" type="text" required autocomplete="off"> <label for="el1">Scrieți varianta corectă</label> </div><a class="btn1 green">Este corect</a> <a class="btn2 red">Corectare</a> </div>').fadeIn();
+    $(".text-inner").fadeIn();
+    $("#text .btn1")[0].onclick = function(){
+        if(stagiu != 11) return;
+        if(chck_n_score(correct_word, word)){
+            player.pregateste('corect.mp4');
+            $("#resp").html('Corect!').removeClass('items').addClass('success');
+        }else{
+            player.pregateste('gresit.mp4');
+            $("#resp").html('Greșit! Corect era: '+diffstr).removeClass('success').addClass('items');
+        }
+        player.play();
+        setTimeout(950, function(){ $("#text").fadeOut(function(){ $("#text").html(''); }) }, 1000);
+        setTimeout(function(){step11(substep-1);}, 2000);
+    };
+    $("#text .btn2")[0].onclick = function(){
+        if(stagiu != 11) return;
+        if(chck_n_score(correct_word, $("#el1").val().toLowerCase())){
+            player.pregateste('corect.mp4');
+            $("#resp").html('Corect!').removeClass('items').addClass('success');
+        }else{
+            player.pregateste('gresit.mp4');
+            $("#resp").html('Greșit! Corect era: '+diffstr).removeClass('success').addClass('items');
+        }
+        player.play();
+        setTimeout(950, function(){ $("#text").fadeOut(function(){ $("#text").html(''); }) }, 1000);
+        setTimeout(function(){step11(substep-1);}, 2000);
+    };
+}
+
+function step12(){
+    stagiu = 12;
+    var word = 'înpreună';
+    var correct_word = 'împreună'
+    var diffstr = dstr(correct_word, word);
+    $("#text").html('<div class="text-inner innerp2"> <b>'+word+'</b> <div id="resp"></div> <div class="input-field col l8 offset-l2"> <input id="el1" type="text" required autocomplete="off"> <label for="el1">Scrieți varianta corectă</label> </div><a class="btn1 green">Este corect</a> <a class="btn2 red">Corectare</a> </div>').fadeIn();
+    $(".text-inner").fadeIn();
+    $("#text .btn1")[0].onclick = function(){
+        if(stagiu != 12) return;
+        if(chck_n_score(correct_word, word)){
+            player.pregateste('corect.mp4');
+            $("#resp").html('Corect!').removeClass('items').addClass('success');
+        }else{
+            player.pregateste('gresit.mp4');
+            $("#resp").html('Greșit! Corect era: '+diffstr).removeClass('success').addClass('items');
+        }
+        player.play();
+        setTimeout(950, function(){ $("#text").fadeOut(function(){ $("#text").html(''); }) }, 1000);
+        setTimeout(step13, 2000);
+    };
+    $("#text .btn2")[0].onclick = function(){
+        if(stagiu != 12) return;
+        if(chck_n_score(correct_word, $("#el1").val().toLowerCase())){
+            player.pregateste('corect.mp4');
+            $("#resp").html('Corect!').removeClass('items').addClass('success');
+        }else{
+            player.pregateste('gresit.mp4');
+            $("#resp").html('Greșit! Corect era: '+diffstr).removeClass('success').addClass('items');
+        }
+        player.play();
+        setTimeout(950, function(){ $("#text").fadeOut(function(){ $("#text").html(''); }) }, 1000);
+        setTimeout(step13, 2000);
+    };
+}
+
+function calcscor(){
+    var tot = scorc + scorg;
+    var rap = (scorc / tot)*10;
+    return Math.round(rap*100)/100;
+}
+
+function step13(){
+    $("#text").fadeOut(function(){
+        $("#text").html('<div class="text-ob">Scor: '+calcscor()+'<br><br>Obiective:<br>- scrierea corectă a cuvintelor care conţin consoana m înainte de b şi p;<br>- corectarea unor cuvinte prin compararea cu un model.</div>');
+        $("#text").fadeIn();
+        $(".text-ob").fadeIn();
+        $.post('ajax/set_scor', {scor: calcscor(), runda: 2});
+    });
 }

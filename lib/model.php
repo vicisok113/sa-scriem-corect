@@ -27,7 +27,7 @@ class model{
 
     public function conectat_elev(){
         //Verifică dacă utilizatorul este conectat
-        return isset($_SESSION['elev_id']) && $_SESSION['elev_id'];
+        return isset($_SESSION['elev_id']) && $_SESSION['elev_id'] ? $_SESSION['elev_id'] : 0;
     }
 
     public function lista_elevi(){
@@ -69,6 +69,14 @@ class model{
             return 4;
         }
         return 0;
+    }
+
+    public function set_scor($runda, $scor){
+        $scor = $this->db->escape($scor);
+        $runda = intval($runda);
+        $id = $this->conectat_elev();
+        if(!$id) return;
+        $this->db->query("UPDATE elevi SET scor{$runda} = $scor, nivel = $runda WHERE id = $id LIMIT 1");
     }
 
 }
