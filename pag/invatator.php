@@ -32,6 +32,7 @@
 			 <th data-field="Scor1">Scor1</th>
 			 <th data-field="Scor2">Scor2</th>
 			 <th data-field="Scor3">Scor3</th>
+			 <th data-field="Scor4">Scor4</th>
 			 <th data-field="Sterge">Sterge</th>
 		 </tr>
 	   </thead>
@@ -42,6 +43,7 @@
 		   <td><?=$elev['scor1']?></td>
 		   <td><?=$elev['scor2']?></td>
 		   <td><?=$elev['scor3']?></td>
+		   <td><?=$elev['scor4']?></td>
 		   <td><a href="" data-id="<?=$elev['id']?>"><i class="material-icons">&#xE5CD;</i></a></td>
 		 </tr>
 		 <?php } ?>

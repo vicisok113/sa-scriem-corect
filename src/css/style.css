@@ -281,9 +281,9 @@ body.lectie .part1 {
 }
 
 body.lectie .part1 img{
-    width: 100%;
-    min-width: 310px;
-    max-width: 450px;
+    width: 90%;
+    min-width: 200px;
+    max-width: 300px;
     height: auto;
     margin-left: -50px;
 }
@@ -456,4 +456,7 @@ body.lectie .text-ob{
 }
 .modal{
     color: #333;
+}
+.regina {
+    width: 50px !important;
 }
