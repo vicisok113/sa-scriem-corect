@@ -238,6 +238,10 @@ body.acasa .harta .checkpoint1:hover + .pers1 {
     overflow: hidden;
 }
 
+.t-red{
+    color: #f44336;
+}
+
 body.lectie {
     background: #FCFCFC;
     color: #fff;
@@ -287,14 +291,19 @@ body.lectie .part2 {
     background-repeat-y: repeat;
     color: #000;
     font-weight: bold;
+    display: block;
+    text-align: center;
 }
 
 body.lectie .part2 h2 {
     font-size: 50px;
     font-family: cursive, sans-serif;
-    margin-top: 0vh;
+    margin-top: 25vh;
     transition: .3s all;
     font-weight: bold;
+    opacity: 0;
+    text-shadow: 0 0 1px rgba(0, 0, 0, 0.5);
+    text-decoration: underline;
 }
 
 body.lectie .part3 {
@@ -327,4 +336,16 @@ body.lectie .part3 img{
     height: auto;
     border-radius: 20px 20px 0 0;
     margin-left: 25px;
+}
+
+body.lectie .text-inner{
+    background: rgba(255, 255, 255, 0.8);
+    padding: 5px 30px;
+    border-radius: 10px;
+    text-align: center;
+    display: none;
+    max-width: 95%;
+    width: 400px;
+    margin: auto;
+    margin-bottom: 10px;
 }
