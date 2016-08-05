@@ -1,3 +1,27 @@
+var scorc = 0;
+var scorg = 0;
+
+//Scufița Roșie
+//Jake și Pirații din Țara de Nicăieri
+//Frumasa din pădurea adormită
+
+//A fost odată ca niciodată un rege fericit. Acesta trăia pe tărâmul cuvintelor.
+
+// si la sfarsit adaugi obiectivele: doar text
+/*
+-scrierea unor cuvinte / propoziții cu majusculă
+-scrierea cu majusculă a substantivelor proprii
+- învățarea, recunoașterea și utilizarea majusculelor și minusculelor}
+*/
+
+
+//exercitiu Andrei(Corect-voce)           andrei(greșit – răspunsul corect era cealaltă variantă)
+//buCurești  (greșit – răspunsul corect era cealaltă variantă)          București(Corect)
+//Japonia (   corect)     japonia(greșit – răspunsul corect era cealaltă variantă)
+//Croitorașul cel viteaz 	(Corect)   croitorașul cel viteaz (greșit – răspunsul corect era cealaltă variantă)
+//hainele cele noi ale împăratului (greșit – răspunsul corect era cealaltă variantă)    Hainele cele noi ale împăratului ( corect)
+//Am mers la mare. (Corect)      am mers la mare. (greșit – răspunsul corect era cealaltă variantă)
+//Astăzi am învățat Ceva Nou. (greșit – răspunsul corect era cealaltă variantă)    Astăzi am învățat ceva nou.(corect)
 var stagiu = 0;
 $(document).ready(function(){
     $("#text").fadeOut(0);
@@ -125,16 +149,103 @@ function step5(){
         setTimeout(function(){
             $("#text").fadeOut( 500, function(){
                  $("#text").html("");
-                 setTimeout(step6, 600);
+                 setTimeout(function(){
+                     player.pregateste('acum_este_momentul.mp4');
+                     player.play(step6);
+
+                 }, 600);
             })
         }, 5000);
     }, 100);
 }
 
-function step6(){
+function step6(repetnr){
     stagiu = 6;
+
     player.pregateste('acum_e_momentul.mp4');
     player.play(function(){
         //apare aplicatie
+
+    if(typeof repetnr == 'undefined') repetnr = 5;
+    if(repetnr == 0) return step7();
+    if(repetnr == 5){
+        cuv1 = 'Andrei';
+        cuv2 = 'andrei';
+        cuv_cor = 1;
+    }else if(repetnr == 4){
+        cuv1 = 'buCurești';
+        cuv2 = 'București';
+        cuv_cor = 2;
+    }else if(repetnr == 3){
+        cuv1 = 'Japonia';
+        cuv2 = 'japonia';
+        cuv_cor = 1;
+    }else if(repetnr == 3){
+        cuv1 = 'Japonia';
+        cuv2 = 'japonia';
+        cuv_cor = 1;
+    }else if(repetnr == 2){
+        cuv1 = 'Croitorașul cel viteaz';
+        cuv2 = 'croitorașul cel viteaz';
+        cuv_cor = 1;
+    }else if(repetnr == 1){
+        cuv1 = 'Astăzi am învățat Ceva Nou.';
+        cuv2 = 'Astăzi am învățat ceva nou.';
+        cuv_cor = 2;
+    }
+    $("#text").html('<div class="text-inner innerp2 innp3"> <div id="resp">Alegeți varianta corectă:</div> <a class="btn1 blue">'+cuv1+'</a> <a class="btn2 blue">'+cuv2+'</a> </div>');
+    $("#text").fadeIn();
+    $(".text-inner").fadeIn();
+    $("#text .btn1")[0].onclick = function(){
+        if(cuv_cor == 1){
+            scorc++;
+            $("#resp").html('Corect!').removeClass('error').addClass('success');
+            player.pregateste('corect.mp4');
+            player.play();
+        }else{
+            scorg++;
+            $("#resp").html('Greșit! Corect era '+(cuv_cor==1?cuv1:cuv2)+'.').removeClass('success').addClass('error');
+            player.pregateste('gresit.mp4');
+            player.play();
+        }
+        setTimeout(950, function(){
+            $("#text").fadeOut(function(){
+                $("#text").html('');
+            })
+        }, 1000);
+        setTimeout(function(){step6(repetnr-1);}, 2000);
+    };
+    $("#text .btn2")[0].onclick = function(){
+        if(cuv_cor == 2){
+            scorc++;
+            $("#resp").html('Corect!').removeClass('error').addClass('success');
+            player.pregateste('corect.mp4');
+            player.play();
+        }else{
+            scorg++;
+            $("#resp").html('Greșit! Corect era '+(cuv_cor==1?cuv1:cuv2)+'.').removeClass('success').addClass('error');
+            player.pregateste('gresit.mp4');
+            player.play();
+        }
+        setTimeout(950, function(){
+            $("#text").fadeOut(function(){
+                $("#text").html('');
+            })
+        }, 1000);
+        setTimeout(function(){step6(repetnr-1);}, 2000);
+    };
+
+}
+
+function step7(){
+    $("#text").fadeOut(function(){
+        $("#text").html('<div class="text-ob">Scor: '+calcscor()+'</div>');
+        $("#text").fadeIn();
+        $(".text-ob").fadeIn();
+        $.post('ajax/set_scor', {scor: calcscor(), runda: 1});
+        setTimeout(function(){
+            window.location.href = 'acasa';
+        }, 5000);
+
     });
 }

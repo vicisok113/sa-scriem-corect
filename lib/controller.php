@@ -57,6 +57,13 @@ class controller{
             $data['eroare_inreg'] = $verif==1 || $verif==2 || $verif==3 ? $verif : 0;
             $data['succes_inreg'] = $verif==4 ? 1 : 0;
             $this->fisier_tpl('inregistrare', $data);
+        } elseif($pag == 'ajax'){
+            //Routerul pentru ajax
+            $ajx = intval($this->ruta(2));
+            if($ajx == 'set_scor' && $this->model->conectat_elev() && isset($_POST['scor'], $_POST['runda'])){
+                $this->model->set_scor($_POST['runda'], $_POST['scor']);
+            }
+
         }
     }
 }

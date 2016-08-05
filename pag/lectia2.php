@@ -8,7 +8,7 @@
 	<div class="container">
 		<div class="part part1">
 			<div>
-				<img src="src/img/rege.png" alt="" />
+				<img src="src/img/marchiz.png" alt="" />
 			</div>
 		</div>
 		<div class="part part2">

@@ -282,6 +282,7 @@ body.lectie .part1 {
 
 body.lectie .part1 img{
     width: 100%;
+    min-width: 310px;
     max-width: 450px;
     height: auto;
     margin-left: -50px;
@@ -407,10 +408,23 @@ body.lectie .text-inner.innerp2 #resp{
     font-size: 28px;
     color: white;
 }
+body.lectie .text-inner.innerp2.innp3 #resp{
+    color: #333;
+    margin-bottom: 30px;
+}
 body.lectie .text-inner.innerp2 #resp.error{
     color: #f44336;
 }
 body.lectie .text-inner.innerp2 #resp.success{
+    color: #4caf50;
+}
+body.lectie .text-inner.innerp2 #resp.items{
+    color: #333;
+}
+body.lectie .text-inner.innerp2 #resp.items s{
+    color: #f44336;
+}
+body.lectie .text-inner.innerp2 #resp.items u{
     color: #4caf50;
 }
 
