@@ -33,7 +33,7 @@ class model{
     public function lista_elevi(){
         if(!isset($_SESSION['id']) || !$_SESSION['id']) return [];
         $id = intval($_SESSION['id']);
-        $elevi = $this->db->query("SELECT id, nume, nivel FROM elevi WHERE prof_id = $id");
+        $elevi = $this->db->query("SELECT id, nume, nivel, scor1, scor2, scor3, scor4 FROM elevi WHERE prof_id = $id");
         return $elevi->fetch_all(MYSQLI_ASSOC);
     }
 

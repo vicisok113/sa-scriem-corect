@@ -50,11 +50,11 @@ function step3(){
 
 function step4(){
     stagiu = 4;
-    $("#text").html('<div class="text-inner">Obiective:</div>');
+    $("#text").html('<div class="text-inner"></div>');
     $("#text").fadeIn(0);
     $(".text-inner").fadeIn(200);
     setTimeout(function(){
-        $("#text").append('<div class="text-ob">- elevul să potrivească corect ortogramele în propoziție;<br>- să recunoască ortogramele</div>');
+        $("#text").append('<div class="text-ob"></div>');
         $(".text-ob").fadeIn(200);
         setTimeout(function(){
             step5();
