@@ -150,7 +150,7 @@ function step5(){
             $("#text").fadeOut( 500, function(){
                  $("#text").html("");
                  setTimeout(function(){
-                     player.pregateste('acum_este_momentul.mp4');
+                     player.pregateste('acum_e_momentul.mp4');
                      player.play(step6);
 
                  }, 600);
@@ -238,14 +238,14 @@ function step6(repetnr){
 }
 
 function step7(){
+    setTimeout(function(){
+        window.location.href = 'acasa';
+    }, 6000);
     $("#text").fadeOut(function(){
         $("#text").html('<div class="text-ob">Scor: '+calcscor()+'</div>');
         $("#text").fadeIn();
         $(".text-ob").fadeIn();
         $.post('ajax/set_scor', {scor: calcscor(), runda: 1});
-        setTimeout(function(){
-            window.location.href = 'acasa';
-        }, 5000);
 
     });
 }

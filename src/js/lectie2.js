@@ -426,13 +426,13 @@ function step12(){
 
 
 function step13(){
+    setTimeout(function(){
+        window.location.href = 'acasa';
+    }, 6000);
     $("#text").fadeOut(function(){
-        $("#text").html('<div class="text-ob">Scor: '+calcscor()+'<br><br>Obiective:<br>- scrierea corectă a cuvintelor care conţin consoana m înainte de b şi p;<br>- corectarea unor cuvinte prin compararea cu un model.</div>');
+        $("#text").html('<div class="text-ob">Scor: '+calcscor()+'</div>');
         $("#text").fadeIn();
         $(".text-ob").fadeIn();
         $.post('ajax/set_scor', {scor: calcscor(), runda: 2});
-        setTimeout(function(){
-            window.location.href = 'acasa';
-        }, 5000);
     });
 }
