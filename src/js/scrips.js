@@ -1,7 +1,7 @@
 $(document).ready(function(){
     $('select').material_select();
     $('.modal-trigger').leanModal();
-    $('.modal-close').close(function(e){
+    $('.modal-close').click(function(e){
         e.preventDefault();
         $(this).parent().parent().closeModal();
     });
