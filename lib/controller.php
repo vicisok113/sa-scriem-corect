@@ -62,12 +62,14 @@ class controller{
             $ajx = intval($this->ruta(2));
             if($ajx == 'set_scor' && $this->model->conectat_elev() && isset($_POST['scor'], $_POST['runda'])){
                 $this->model->set_scor($_POST['runda'], $_POST['scor']);
+            } elseif($ajx == 'del_elev' && $this->model->conectat() && isset($_POST['id_elev'])){
+                $this->model->del_elev($_POST['id_elev']);
             }
         } elseif($pag == 'invatator'){
             $data['logat'] = $this->model->conectat();
             if($data['logat']){
-                $data['elevi'] = $this->model->lista_elevi();
                 $verif = $this->model->verif_elev();
+                $data['elevi'] = $this->model->lista_elevi();
             }
             $this->fisier_tpl('invatator', $data);
         }

@@ -57,3 +57,11 @@ function calcscor(){
     var rap = (scorc / tot)*10;
     return Math.round(rap*100)/100;
 }
+
+$(document).on('click', '.delbtn', function(e){
+    e.preventDefault();
+    var id_elev = $(this).data('id');
+    $.post("ajax/del_elev", {id_elev: id_elev}).done(function(){
+        window.location.reload();
+    });
+})

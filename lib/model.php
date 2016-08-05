@@ -91,4 +91,11 @@ class model{
         $this->db->query("UPDATE elevi SET scor{$runda} = $scor, nivel = $runda WHERE id = $id LIMIT 1");
     }
 
+    public function del_elev($elev_id){
+        $prid = (int)$this->conectat();
+        $elid = (int)$elev_id;
+        $this->db->query("DELETE FROM elevi WHERE id = $elid AND prof_id = $prid LIMIt 1");
+        return 1;
+    }
+
 }
