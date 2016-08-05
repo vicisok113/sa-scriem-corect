@@ -140,27 +140,17 @@ function step4(){
 
 function step5(){
     stagiu = 5;
-    $("#text").html('<div class="text-inner">Obiectivele lecției:</div>');
-    $("#text").fadeIn(0);
-    $(".text-inner").fadeIn(200);
-    setTimeout(function(){
-        $("#text").append('<div class="text-ob">- scrierea unor cuvinte / propoziții cu majusculă<br>- scrierea cu majusculă a substantivelor proprii<br>- învățarea, recunoașterea și utilizarea majusculelor și minusculelor</div>');
-        $(".text-ob").fadeIn(200);
-        setTimeout(function(){
-            $("#text").fadeOut( 500, function(){
-                 $("#text").html("");
-                 setTimeout(function(){
-                     player.pregateste('acum_e_momentul.mp4');
-                     player.play(step6);
-
-                 }, 600);
-            })
-        }, 5000);
-    }, 100);
+    $("#text").fadeOut( 500, function(){
+         $("#text").html("");
+         setTimeout(function(){
+             player.pregateste('acum_e_momentul.mp4');
+             player.play(step6);
+         }, 600);
+    })
 }
 
 function step6(repetnr){
-    stagiu = 6; 
+    stagiu = 6;
 
     if(typeof repetnr == 'undefined') repetnr = 5;
     if(repetnr == 0) return step7();
