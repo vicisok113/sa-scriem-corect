@@ -299,7 +299,9 @@ body.lectie .part2 h2 {
     font-size: 50px;
     font-family: cursive, sans-serif;
     margin-top: 25vh;
-    transition: .3s all;
+    width: 95%;
+    max-width: 900px;
+    transition: 1.3s all;
     font-weight: bold;
     opacity: 0;
     text-shadow: 0 0 1px rgba(0, 0, 0, 0.5);
@@ -340,7 +342,7 @@ body.lectie .part3 img{
 
 body.lectie .text-inner{
     background: rgba(255, 255, 255, 0.8);
-    padding: 5px 30px;
+    padding: 15px 30px;
     border-radius: 10px;
     text-align: center;
     display: none;
@@ -348,4 +350,55 @@ body.lectie .text-inner{
     width: 400px;
     margin: auto;
     margin-bottom: 10px;
+    font-family: 'Source Sans Pro';
+}
+
+body.lectie .text-inner.innerp{
+    background: rgba(255, 255, 255, 0.92);
+    line-height: 24px;
+    font-size: 22px;
+    line-height: initial;
+    font-weight: normal;
+}
+
+body.lectie .text-inner.innerp2{
+    background: rgba(255, 255, 255, 0.96);
+    font-size: 19px;
+    /*line-height: 19px;*/
+    font-size: 20px;
+    line-height: initial;
+    font-weight: normal;
+    padding: 15px 30px;
+    overflow: hidden;
+
+}
+body.lectie .text-inner.innerp2 b{
+    display: block;
+    font-size: 35px;
+}
+body.lectie .text-inner.innerp2 a{
+    background: #ededed;
+    display: block;
+    font-size: 25px;
+    width: 45%;
+    float: left;
+    padding: 10px;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+}
+body.lectie .text-inner.innerp2 a:nth-child(2n){
+    float: right;
+}
+body.lectie .text-inner.innerp2 #resp{
+    text-align: center;
+    font-weight: bold;
+    font-size: 28px;
+    color: white;
+}
+body.lectie .text-inner.innerp2 #resp.error{
+    color: #f44336;
+}
+body.lectie .text-inner.innerp2 #resp.success{
+    color: #4caf50;
 }
